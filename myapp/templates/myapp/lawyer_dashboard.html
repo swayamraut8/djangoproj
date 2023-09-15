@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lawyer Dashboard</title>
+    <!-- Include CSS and styling libraries here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Lawyer Dashboard, {{ user.username }}</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'leaderboard' %}">Leaderboard</a></li>
+            <li><a href="{% url 'client_requests' %}">Client Requests</a></li>
+            <li><a href="{% url 'potential_clients' %}">Potential Clients</a></li>
+        </ul>
+    </nav>
+    
+    <section>
+        <h2>Existing Consultations with Clients</h2>
+        <!-- Dynamic table displaying existing consultations -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Consultation ID</th>
+                    <th>Client</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populate the table rows dynamically from your Django models -->
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- Add more sections or features as needed -->
+    
+    <footer>
+        <a href="{% url 'logout' %}">Logout</a>
+    </footer>
+</body>
+</html>
